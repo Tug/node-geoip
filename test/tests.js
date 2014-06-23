@@ -26,7 +26,7 @@ module.exports = {
 		test.ok(actual, 'should return data about IPv6.');
 
 		test.done();
-	},
+	}, 
 
 	testRegionName: function(test){
 		test.expect(3);
@@ -56,6 +56,19 @@ module.exports = {
 		test.ok(actual, "Should return a non-null value for " + ip);
 		test.equal(actual.city, expected, "UTF8 city name does not match");
 		
+		test.done();
+	},
+
+	testMetro: function(test) {
+		test.expect(2);
+
+		var ip = "23.240.63.68";
+		var expected = "Todenbüttel";
+		var actual = geoip.lookup(ip);
+
+		test.equal(actual.city, "Van Nuys");
+		test.equal(actual.metro, 803);
+
 		test.done();
 	}
 };

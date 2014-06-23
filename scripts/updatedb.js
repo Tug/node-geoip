@@ -2,7 +2,7 @@
 
 'use strict';
 
-if(!process.env.npm_package_config_update){
+if(!process.env.npm_package_config_update && !process.env.NPM_PACKAGE_CONFIG_UPDATE){
 	return;
 }
 
